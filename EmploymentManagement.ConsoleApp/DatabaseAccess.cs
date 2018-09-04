@@ -13,7 +13,7 @@ namespace EmploymentManagement.ConsoleApp
             {
                 DataSource = "localhost",
                 IntegratedSecurity = true,
-                InitialCatalog = "EmploymentDb"
+                InitialCatalog = "EmploymentManagementDb"
             }.ConnectionString;
 
         public IEnumerable<EmployeeFinancialInfo> GetFinancialInfoForAllEmployees()
