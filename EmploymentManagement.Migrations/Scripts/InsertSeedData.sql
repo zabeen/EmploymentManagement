@@ -44,8 +44,11 @@
  GO
  
  UPDATE EmployeePensions
- SET PensionProviderId = 2
- WHERE EmployeeId IN (1, 7)
+ SET PensionProviderId = (SELECT PensionProviderId FROM PensionProviders WHERE ProviderName = 'BestPensionsEva')
+ FROM EmployeePensions ep
+ JOIN Employees e
+ ON ep.EmployeeId = e.EmployeeId
+ WHERE (e.FirstName = 'Sarah' AND e.LastName = 'Singh') OR (e.FirstName = 'Kate' AND e.LastName = 'Krunch')
  GO
  
  UPDATE EmployeePensions

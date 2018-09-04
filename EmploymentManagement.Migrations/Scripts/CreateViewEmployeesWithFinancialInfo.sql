@@ -3,7 +3,7 @@
 CREATE VIEW[dbo].[View_EmployeesWithFinancialInfo] As
 	SELECT
 		e.FirstName + ' ' + e.LastName AS FullName,
-			jp.JobPosition,
+		jp.JobPosition,
 		CAST(e.Salary AS money) AS Salary,
 		CAST(ep.TotalContribution AS money) AS PensionFundBalance
 	FROM Employees e
