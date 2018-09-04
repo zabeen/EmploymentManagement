@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace EmploymentManagement.Migrations
+namespace EmploymentManagement.Migrations.Migrations
 {
     [Migration(201809041550)]
     public class CreateEmploymentManagementDatabase : Migration
