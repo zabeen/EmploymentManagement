@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using EmploymentManagement.ConsoleApp.ViewModels;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace EmploymentManagement.ConsoleApp
@@ -20,6 +21,19 @@ namespace EmploymentManagement.ConsoleApp
             using (var connection = new SqlConnection(connectionString))
             {
                 return connection.Query<EmployeeFinancialInfo>("SELECT * FROM View_EmployeesWithFinancialInfo");
+            }
+        }
+
+        public void ExecutePensionFundIncrease()
+        {
+            const decimal salaryPercentageToContribute = (decimal) 5.0;
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Execute(
+                    "SP_AddContributionToEmployeePensionFunds",
+                    new { SalaryPercentageToContribute = salaryPercentageToContribute },
+                    commandType: CommandType.StoredProcedure);
             }
         }
     }
