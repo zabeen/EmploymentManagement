@@ -118,19 +118,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\CreateSPAddContributionToEmployeePensionFunds.sql" />
+    <EmbeddedResource Include="Scripts\Migration201809041550\CreateSPAddContributionToEmployeePensionFunds.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\DeleteSPAddContributionToEmployeePensionFunds.sql" />
+    <EmbeddedResource Include="Scripts\Migration201809041550\DeleteSPAddContributionToEmployeePensionFunds.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\CreateViewEmployeesWithFinancialInfo.sql" />
+    <EmbeddedResource Include="Scripts\Migration201809041550\CreateViewEmployeesWithFinancialInfo.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\DeleteViewEmployeesWithFinancialInfo.sql" />
+    <EmbeddedResource Include="Scripts\Migration201809041550\DeleteViewEmployeesWithFinancialInfo.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\InsertSeedData.sql" />
+    <EmbeddedResource Include="Scripts\Migration201809042212\InsertSeedData.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
