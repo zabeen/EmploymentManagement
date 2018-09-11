@@ -6,16 +6,15 @@ namespace EmploymentManagement.ConsoleApp
     {
         public static void Main(string[] args)
         {
-            GetFinancialInfoForAllEmployeesFromDatabase();
-            IncreaseEmployeesPensionFundBalances();
+            var databaseAccess = new DatabaseAccess();
+            GetFinancialInfoForAllEmployeesFromDatabase(databaseAccess);
+            IncreaseEmployeesPensionFundBalances(databaseAccess);
 
             Console.ReadLine();
         }
 
-        private static void GetFinancialInfoForAllEmployeesFromDatabase()
+        private static void GetFinancialInfoForAllEmployeesFromDatabase(DatabaseAccess databaseAccess)
         {
-            var databaseAccess = new DatabaseAccess();
-
             Console.WriteLine();
             Console.WriteLine("Financial Information for all Employees");
             Console.WriteLine("------");
@@ -30,17 +29,16 @@ namespace EmploymentManagement.ConsoleApp
             Console.WriteLine();
         }
 
-        private static void IncreaseEmployeesPensionFundBalances()
+        private static void IncreaseEmployeesPensionFundBalances(DatabaseAccess databaseAccess)
         {
             Console.WriteLine("Do you wish to increase the pension balance of all employees? (Enter 'y' for yes, or any other value for no.)");
             var response = Console.ReadLine();
 
             if (response != null && response.ToLower().Equals("y"))
             {
-                var databaseAccess = new DatabaseAccess();
                 databaseAccess.ExecutePensionFundIncrease();
                 Console.WriteLine("Done!");
-                GetFinancialInfoForAllEmployeesFromDatabase();
+                GetFinancialInfoForAllEmployeesFromDatabase(databaseAccess);
             }
             else
             {
