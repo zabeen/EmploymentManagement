@@ -108,9 +108,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\CreateEmploymentManagementDatabase.cs" />
+    <Compile Include="Migrations\3_AddStartDateColumn.cs" />
+    <Compile Include="Migrations\1_CreateEmploymentManagementDatabase.cs" />
     <Compile Include="MigrationExtensions.cs" />
-    <Compile Include="Migrations\InsertSeedData.cs" />
+    <Compile Include="Migrations\2_InsertSeedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
